@@ -3,6 +3,9 @@ Form-validation
 
 A easy form validation with jquery, that is very readable and easy to remember because of the nearly spoken code.
 
+Features:
+- Removes classes that were added automaticly, when the problem is fixed.
+
 ```
 var name = $('#name')
 ,   email = $('#email')
@@ -16,10 +19,10 @@ $('#submit').click(function(){
 });
 
 function validate() {
-  var are = new smartValidate();
-  are(name).empty().addClass('error');
-  are(email).empty().and().notIncluding('@').addClass('error');
-  are(age).empty().and().notaNumber().addClass('error');
+  var is = new smartValidate();
+  is(name).empty().addClass('error');
+  is(email).empty().and().notIncluding('@').addClass('error');
+  is(age).empty().and().notaNumber().addClass('error');
   
   return are.there.errors; // returns true or false
 }
